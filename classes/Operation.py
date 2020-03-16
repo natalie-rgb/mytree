@@ -49,8 +49,10 @@ class Operations:
         return num
 
     def mean_tree(self,root):
-        print("Mean of Tree:", result / num)
-        return result / num
+        num_ = self.num_of_leaves(root)
+        result_ = self.sum_all_leaves(root)
+        print("Mean of Tree:", result_ / num_)
+        return result_ / num_
 
     def t_inorder(self, root, inorder):
         if root is None:
@@ -60,18 +62,19 @@ class Operations:
         self.t_inorder(root.right, inorder)
 
     def median_tree(self, root):
+        num_ = self.num_of_leaves(root)
         if root is None:
             return 0
         array = []
         self.t_inorder(root, array)
         array = sorted(array)
 
-        if num % 2 == 0:
-            res = array[num // 2 - 1] + array[num // 2]
+        if num_ % 2 == 0:
+            res = array[num_ // 2 - 1] + array[num_ // 2]
             print("Median of Tree:", res / 2)
             return res/2
         else:
-            print("Median of Tree:", array[num // 2])
-            return array[num // 2]
+            print("Median of Tree:", array[num_ // 2])
+            return array[num_ // 2]
 
 result = 0
